@@ -5,5 +5,13 @@ datasource db {
 
 generator client{
 
-    provider= "prisma-client-js";
+    provider= "prisma-client-js"
+}
+
+model Todo{
+
+    id String @unique @default(cuid())
+    title String
+    description String?
+
 }

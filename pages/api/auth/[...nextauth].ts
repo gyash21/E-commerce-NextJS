@@ -14,5 +14,12 @@ export default NextAuth({
     }),
   ],
 
+  events:{
+    createUser:async ({ user}) => {
+
+      
+    }
+  }
+
 })
 

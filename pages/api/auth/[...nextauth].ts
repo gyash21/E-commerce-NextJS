@@ -17,10 +17,19 @@ export default NextAuth({
 
   events:{
     createUser:async ({ user}) => {
+      const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, { apiVersion:'2023-08-16',
+    
+    })
 
-
-    }
+    // Create a stripe customer
+    if(user.name && user.email){
+    const customer = await stripe.customers.create({
+      email: user.email,
+      name: user.name,
+    })
   }
+    },
+  },
 
 })
 

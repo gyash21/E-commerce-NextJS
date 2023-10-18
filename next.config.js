@@ -3,7 +3,9 @@
  */
 const nextConfig = {
   /* config options here */
-  images: ['lh3.googleusercontent.com']
+  images:{
+  domains: ['lh3.googleusercontent.com']
+  }
 }
  
 module.exports = nextConfig

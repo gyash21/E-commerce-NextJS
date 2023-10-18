@@ -8,7 +8,7 @@ import { signIn } from 'next-auth/react'
 
 
 
-export default function Nav() {
+export default function Nav({user} : Session) {
 
     return(
         <nav>

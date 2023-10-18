@@ -2,6 +2,7 @@
 
 import { Session } from 'next-auth'
 import { signIn } from 'next-auth/react'
+import Image from 'next/image'
 
 
 
@@ -20,6 +21,12 @@ export default function Nav({user} : Session) {
                 {!user && (
                     <li>
                     <button onClick={() => signIn()}>Sign </button>
+                    </li>
+                )}
+
+                {user && (
+                    <li>
+                        <Image src={user?.image as string} alt={user.name as string} width={48} height={48}/>
                     </li>
                 )}
             </ul>

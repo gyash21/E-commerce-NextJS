@@ -12,11 +12,10 @@ import Image from 'next/image'
 export default function Nav({user} : Session) {
 
     return(
-        <nav>
+        <nav className='flex justify-between items-center py-8'>
             <h1>Styled</h1>
 
             <ul>
-                <li>Products</li>
                 {/* Checking if the user is Signed In */}
                 {!user && (
                     <li>
@@ -26,7 +25,9 @@ export default function Nav({user} : Session) {
 
                 {user && (
                     <li>
-                        <Image src={user?.image as string} alt={user.name as string} width={48} height={48}/>
+                        <Image src={user?.image as string} alt={user.name as string} width={48} height={48}
+                        className='rounded-full'
+                        />
                     </li>
                 )}
             </ul>

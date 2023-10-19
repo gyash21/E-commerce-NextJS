@@ -6,7 +6,12 @@ const getProducts = async() => {
   })
   const products = await stripe.products.list();
 
-  
+  const productWithPrices = await Promise.all(
+    products.data.map(async (product) => {
+
+      const prices = await stripe.prices.list({product: product.id})
+    })
+  )
 
 }
 

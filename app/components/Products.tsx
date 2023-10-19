@@ -1,6 +1,8 @@
 export default function Product({name, image, price}){
 
     return(
-        <div></div>
+        <div>
+            <h1>{name}</h1>
+        </div>
     )
 }

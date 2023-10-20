@@ -1,5 +1,6 @@
 import Image from "next/image"
 import formatPrice from "@/util/PriceFormat"
+import { ProducType } from "@/types/ProductType"
 
 export default function Product({name, image, price}: {name:string, image:string, price: number | null}){
 

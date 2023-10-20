@@ -7,10 +7,14 @@ export default function Product({name, image, price}: {name:string, image:string
     return(
         <div className="text-gray-700">
         
-            <Image src={image} alt={name} width={800} height={800} className="w-96 h-89 object-cover"/>
-            <h1>{name}</h1>
-            {formatPrice(price)}
+            <Image src={image} alt={name} width={800} height={800} className="w-96 h-89 object-cover rounded-lg"/>
 
+            <div className="font-medium py-2">
+
+            <h1>{name}</h1>
+            <h2 className="text-sm text-teal-700">{formatPrice(price)}</h2>
+
+            </div>
         </div>
     )
 }

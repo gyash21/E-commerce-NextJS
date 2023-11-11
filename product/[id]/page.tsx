@@ -10,8 +10,8 @@ export default async function Product({ searchParams }){
             height={600}
             />
         <div>
-            <h1>Name</h1>
-            <p>Description</p>
+            <h1>{searchParams.name}</h1>
+            <p>{searchParams.description}</p>
         </div>
     </div>
         )

@@ -1,6 +1,7 @@
 import Image from "next/image"
+import { SearchParamType } from "@/types/SearchParamType"
 
-export default async function Product({ searchParams }){
+export default async function Product({ searchParams } : SearchParamType){
 
     return(
         <div className="flex justify-between gap-24 p-12 text-gray-700">

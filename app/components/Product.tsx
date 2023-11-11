@@ -1,15 +1,16 @@
 import Image from "next/image"
 import formatPrice from "@/util/PriceFormat"
-import { ProducType } from "@/types/ProductType"
+import { ProductType } from "@/types/ProductType"
 import Link from "next/link"
 
-export default function Product({name, image, price, id}: {name:string, image:string, price: number | null, id:string}){
+export default function Product({name, image, unit_amount, id,description, metadata}: ProductType){
+    const { features } = metadata
 
     return(
-        <Link href={{pathname: '/product/${id}', query:{name,image,price,id}}}>
+        <Link href={{pathname: '/product/${id}', query:{name, image, unit_amount, id, description, features}}}>
         <div className="text-gray-700">
         
-            <Image src={image} alt={name} width={800} height={800} className="w-96 h-89 object-cover rounded-lg"/>
+            <Image src={image} alt={name} width={800} height={800} className= "w-96 h-89 object-cover rounded-lg"/>
 
             <div className="font-medium py-2">
 

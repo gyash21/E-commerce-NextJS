@@ -1,6 +1,4 @@
-import { Params } from "next/dist/shared/lib/router/utils/route-matcher"
-
-type params = {
+type Params = {
 
     id: string
 }
@@ -8,9 +6,11 @@ type params = {
 type SearchParams = {
 
     name: string
-    price: number | null
+    unit_amount: number | null
     image: string
     id: string
+    description: string | null
+    features: string
 }
 
 

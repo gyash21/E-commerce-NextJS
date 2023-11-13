@@ -13,7 +13,7 @@ export default function Nav({user} : Session) {
 
     return(
         <nav className='flex justify-between items-center py-8'>
-            <h1>Styled</h1>
+            <h1>Next-Ecom</h1>
 
             <ul className='flex items-center gap-12'>
                 {/* Checking if the user is Signed In */}

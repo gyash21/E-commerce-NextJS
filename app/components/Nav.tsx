@@ -7,8 +7,6 @@ import Image from 'next/image'
 
 
 
-
-
 export default function Nav({user} : Session) {
 
     return(

@@ -21,6 +21,8 @@ export default async function Product({ searchParams } : SearchParamType){
                     {searchParams.unit_amount && formatPrice(searchParams.unit_amount)}
                 </p>
             </div>
+
+            <button className="my-12 text-white py-2 px-6 font-medium rounded-md">Add to cart</button>
         </div>
     </div>
         )

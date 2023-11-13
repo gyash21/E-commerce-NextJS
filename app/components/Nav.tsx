@@ -3,7 +3,7 @@
 import { Session } from 'next-auth'
 import { signIn } from 'next-auth/react'
 import Image from 'next/image'
-
+import Link from 'next/link'
 
 
 
@@ -11,7 +11,10 @@ export default function Nav({user} : Session) {
 
     return(
         <nav className='flex justify-between items-center py-8'>
+            <Link href={"/"}>
+
             <h1>Next-Ecom</h1>
+            </Link>
 
             <ul className='flex items-center gap-12'>
                 {/* Checking if the user is Signed In */}

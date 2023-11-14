@@ -17,7 +17,7 @@ export default function Nav({user} : Session) {
         <nav className='flex justify-between items-center py-12'>
             <Link href={"/"}>
 
-            <h1>Next-Ecom</h1>
+            <h1 className='font-bold text-2xl text-cyan-700'>Next-Ecom</h1>
             </Link>
 
             <ul className='flex items-center gap-12'>

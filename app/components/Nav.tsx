@@ -47,7 +47,7 @@ export default function Nav({user} : Session) {
                         </div>
                 )}
             </ul>
-            {useCartStore.isOpen && <Cart/>}
+            {cartStore.isOpen && <Cart/>}
         </nav>
     )
 }

@@ -14,7 +14,7 @@ export default function Nav({user} : Session) {
 
     const cartStore = useCartStore()
     return(
-        <nav className='flex justify-between items-center py-8'>
+        <nav className='flex justify-between items-center py-12'>
             <Link href={"/"}>
 
             <h1>Next-Ecom</h1>
@@ -22,7 +22,7 @@ export default function Nav({user} : Session) {
 
             <ul className='flex items-center gap-12'>
                 {/* Checking if the user is Signed In */}
-                <li>
+                <li className='flex items-center text-3xl relative cursor-pointer '>
                 <AiFillShopping/>
                 </li>
                 {!user && (

@@ -3,7 +3,7 @@
 import { useCartStore } from "@/store"
 
 
-export default function AddCart(){
+export default function AddCart({name, id, image, unit_amount}){
 
     return(
         <>

@@ -16,6 +16,7 @@ type CartState = {
     isOpen: boolean,
     cart: CartItem[]
     toggleCart: () => void
+    addProduct: (item: CartItem) => void
 
 }
 
@@ -24,7 +25,18 @@ export const useCartStore = create<CartState>()(
         (set) => ({
             cart:[],
             isOpen: false,
-            toggleCart: () => set((state) => ({isOpen: !state.isOpen}))
+            toggleCart: () => set((state) => ({isOpen: !state.isOpen})),
+            addProduct: (item) => set((state) => {
+                const existingItem = state.cart.find (cartItem => cartItem === item.id)
+                if(existingItem){
+                    const updatedCart = state.cart.map((cartItem) => {
+                        if(cartItem === item.id){
+                            return {...cartItem, quantity: cartItem.quantity + 1}
+                        }
+                        return cartItem
+                    })
+                }
+            }),
         }),
 
         { name: 'cart-store'}

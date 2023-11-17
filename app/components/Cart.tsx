@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { useCartStore } from "@/store"
 import formatPrice from "@/util/PriceFormat"
+import { IoAddCricle, IoRemoveCircle } from 'react-icons/io5'
 
 
 
@@ -21,7 +22,12 @@ export default function Cart(){
 
                 <div>
                     <h2>{item.name}</h2>
+                    
+                    <div className="flex gap-2">
                     <h2>Quantity: {item.quantity}</h2>
+                    <button><IoRemoveCircle/></button>
+                    <button><IoAddCricle/></button>
+                    </div>
                     <p className="text-sm">{item.unit_amount &&formatPrice(item.unit_amount)}</p>
                 </div>
             </div>

@@ -1,9 +1,16 @@
 'use client'
 
 import { useCartStore } from "@/store"
+import { AddCartType } from "@/types/AddCartType"
+import { useState } from "react"
 
 
-export default function AddCart({name, id, image, unit_amount}){
+export default function AddCart({name, id, image, unit_amount, quantity}:AddCartType){
+    const cartStore = useCartStore()
+    const [added, setAdded] = useState(false)
+
+
+
 
     return(
         <>

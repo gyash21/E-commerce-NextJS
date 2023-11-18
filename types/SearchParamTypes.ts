@@ -15,7 +15,7 @@ type SearchParams = {
 
 
 
-export type SearchParamType = {
+export type SearchParamTypes = {
    
     params: Params
     searchParams: SearchParams

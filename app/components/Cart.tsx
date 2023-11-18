@@ -27,7 +27,11 @@ export default function Cart(){
          animate={{opacity:1}}
          exit={{opacity:0}}
         onClick={ () => cartStore.toggleCart()}className="fixed w-full h-screen left-0 top-0 bg-black/25">
-            <div onClick={(e) => e.stopPropagation()} className="bg-white absolute roght-0 top-0 w-1/4 h-screen p-12 overflow-y-auto text-gray-700">
+
+
+            <motion.div 
+            
+            onClick={(e) => e.stopPropagation()} className="bg-white absolute roght-0 top-0 w-1/4 h-screen p-12 overflow-y-auto text-gray-700">
           <h1>Here's your shopping list 📃</h1>
           {cartStore.cart.map((item) => (
             <div className="flex py-4 gap-4">
@@ -50,15 +54,17 @@ export default function Cart(){
             </div>
           ))}
             // Checkout and Total
+                <motion.div Layout>
 
             <p>Total : {formatPrice(totalPrice)} </p>
 
 
           { cartStore.cart.length >0 &&(
+            
+            <button className="py-2 mt-4 bg-teal-700w-full rounded-md text-white">Checkout</button>
+            )}
 
-          <button className="py-2 mt-4 bg-teal-700w-full rounded-md text-white">Checkout</button>
-          )}
-
+            </motion.div>
           <AnimatePresence>
           {!cartStore.cart.length && (
             <motion.div 
@@ -71,7 +77,7 @@ export default function Cart(){
             </motion.div>
           )}
           </AnimatePresence>
-            </div>
+            </motion.div>
            
         </motion.div>
     )

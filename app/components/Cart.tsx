@@ -12,6 +12,13 @@ export default function Cart(){
 
     const cartStore = useCartStore()
 
+// Total price in the cart
+    const totalPrice = cartStore.cart.reduce((acc, item) => {
+
+        return acc + item.unit_amount * item.quantity
+    }, 0)
+
+
     return(
 
         <div onClick={ () => cartStore.toggleCart()}className="fixed w-full h-screen left-0 top-0 bg-black/25">
@@ -37,6 +44,10 @@ export default function Cart(){
                 </div>
             </div>
           ))}
+            // Checkout and Total
+
+            <p>Total : {formatPrice(totalPrice)} </p>
+
 
           { cartStore.cart.length >0 &&(
 
